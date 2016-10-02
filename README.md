@@ -73,37 +73,37 @@ A collection of useful packages and functions for use with the [Sauron](https://
 	(sauron-start)
 	```
    * tail /var/log/messages
-	   ```elisp
-	   (sauron-tail-file "/var/log/messages")
-	   ```
+   ```elisp
+   (sauron-tail-file "/var/log/messages")
+   ```
    * tail /var/log/messages giving a better prefix
-	   ```elisp
-	   (sauron-tail-file "/var/log/messages" :prefix "messages")
-	   ```
+   ```elisp
+   (sauron-tail-file "/var/log/messages" :prefix "messages")
+   ```
    * tail /var/log/messages and only log lines matching "NetworkManager"
-	   ```elisp
-	   (sauron-tail-file "/var/log/messages"
-						 :filter (sauron-tail-match-p "NetworkManager"))
-	   ```
+   ```elisp
+   (sauron-tail-file "/var/log/messages"
+					 :filter (sauron-tail-match-p "NetworkManager"))
+   ```
    * tail the command journalctl, match lines matching NetworkManager, only printing the match
-	   ```elisp
-	   (sauron-tail-command "journalctl -f"
-							:filter (sauron-tail-match "NetworkManager.*"))
-	   ```
+   ```elisp
+   (sauron-tail-command "journalctl -f"
+						:filter (sauron-tail-match "NetworkManager.*"))
+   ```
    * tail the command journalctl, match lines matching NetworkManager, only printing adress
-	   ```elisp
-	   (sauron-tail-command "journalctl -f"
-							:filter (sauron-tail-match "NetworkManager.*\\(address.*\\)"))
-	   ```
+   ```elisp
+   (sauron-tail-command "journalctl -f"
+						:filter (sauron-tail-match "NetworkManager.*\\(address.*\\)"))
+   ```
 
    * tail the command journalctl, match lines matching NetworkManager, highlighting the  adress
-	   ```elisp
-	   (sauron-tail-command "journalctl -f"
-							:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)"))
-	   ```
+   ```elisp
+   (sauron-tail-command "journalctl -f"
+						:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)"))
+   ```
    * tail the command journalctl, include all lines, and highlighting the  adress
-	   ```elisp
-	   (sauron-tail-command "journalctl -f"
-							:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)")
-							:all)
-	   ```
+   ```elisp
+   (sauron-tail-command "journalctl -f"
+						:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)")
+						:all)
+   ```
