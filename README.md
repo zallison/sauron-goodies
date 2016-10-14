@@ -96,14 +96,23 @@ A collection of useful packages and functions for use with the [Sauron](https://
 						:filter (sauron-tail-match "NetworkManager.*\\(address.*\\)"))
    ```
 
-   * tail the command journalctl, match lines matching NetworkManager, highlighting the  adress
+   * tail the command journalctl, match lines matching NetworkManager, highlighting the adress
    ```elisp
    (sauron-tail-command "journalctl -f"
 						:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)"))
    ```
-   * tail the command journalctl, include all lines, and highlighting the  adress
+   * tail the command journalctl, include all lines, and highlighting the adress
    ```elisp
    (sauron-tail-command "journalctl -f"
 						:filter (sauron-tail-highlight "NetworkManager.*\\(address.*\\)")
 						:all)
+   ```
+
+   * tail the command journalctl, running a custom filter
+   ```elisp
+   (sauron-tail-command "my-monitor"
+                        :filter (lambda (line) (if (string-match "Error" line)
+						                       '(:prio 5 :msg "OH NO, AN ERROR")
+						                       '(:prio 4))))
+
    ```
