@@ -1,8 +1,13 @@
+
+# EDIT 2020
+# This is long obsolete and has been merged into the [Sauron](https://github.com/djcb/sauron) base package.  Please submit issues or pull requests there.
+
+
 # sauron-goodies
 Goodies for the Sauron logger for emacs
 
 # Description
-A collection of useful packages and functions for use with the [Sauron](https://github.com/djcb/sauron) logging system for emacs.
+A collection of useful packages and functions for use with the c logging system for emacs.
 
 # Packages
 * sauron-tail
